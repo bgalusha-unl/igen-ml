@@ -36,14 +36,6 @@ class DecisionTree:
 			return [self]
 		return leaves
 
-def summary(tree, dom):
-	assert tree.children
-	var = tree.children[0].var
-	vdom = set(dom[var])
-	reached = set([c.val for c in tree.children])
-	not_reached = vdom - reached 
-	print(reached, not_reached)
-
 def pretty_print(tree, name='*'):
 	'''Print a decision tree, treating the tree as a root.
 	'''

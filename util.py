@@ -19,16 +19,6 @@ def readlines_strip(path):
 		lines = [l for l in lines if not l.startswith('#')] 
 	return lines
 
-def exactly_descending(numbers):
-	return exactly_ascending(numbers[::-1])
-
-def exactly_ascending(numbers):
-	n = sorted(numbers)
-	for a,b in zip(n, n[1:]):
-		if not b == a + 1:
-			return False
-	return True
-
 def panic(err, code):
 	log.critical('A FATAL ERROR OCCURRED: code %s: %s', code, err)
 	exit()
