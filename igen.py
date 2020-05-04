@@ -43,7 +43,8 @@ def do_all(dom, dir_path):
 		locations = coverage.parse(out)
 		dt.update_forest(forest, conf, locations) 
 	for location, tree in sorted(forest.items()):
-		dt
+		dt.pretty_print(tree, location)
+
 
 def do_iter(dom, dir_path, iter_max):
 	forest = OrderedDict()
